@@ -5,7 +5,7 @@ This repository contains Terraform configurations for infrastructure as code.
 ## Table of Contents
 
 - [Directory Structure](#directory-structure)
-- [Creating & Using Modules](#creating-using-modules)
+- [Creating & Using Modules](#creating--using-modules)
 - [Deploying Terraform code](#deploying-terraform-code)
 
 
@@ -62,6 +62,9 @@ NOTE: Terraform states are stored locally.
 
     user_data = var.user_data
     }
+
+
+
 
 
 ## Deploying Terraform code
