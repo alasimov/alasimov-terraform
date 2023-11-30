@@ -62,7 +62,7 @@ NOTE: Terraform states are stored locally.
 
     user_data = var.user_data
     }
-    ...
+    
     
 ## Deploying Terraform code
     
