@@ -23,8 +23,8 @@ The directory structure is integral to the proper functioning of the Terraform c
   * [app_name/](./projects/web-app)
     * [main.tf](./projects/web-app/main.tf)
     * [Makefile](./projects/web-appp/Makefile)
-    * [provider.tf](./modules/web-app/provider.tf)
-    * [variables.tf](./modules/web-app/variables.tf)
+    * [provider.tf](./projects/web-app/provider.tf)
+    * [variables.tf](./projects/web-app/variables.tf)
 
 
 
