@@ -1,7 +1,6 @@
 # Common variables
 variable "tags" {
   type = object({
-    Environment = string
     ManagedBy   = string
   })
   default = {

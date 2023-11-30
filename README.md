@@ -13,7 +13,6 @@ This repository contains Terraform configurations for infrastructure as code.
 
 The directory structure is integral to the proper functioning of the Terraform configurations setup.
 
-# terraform-infrastructure
 
 * [modules/](./modules)
   * [app_name/](./modules/web-app)
@@ -22,9 +21,10 @@ The directory structure is integral to the proper functioning of the Terraform c
 * [projects/](./projects)
   * [app_name/](./projects/web-app)
     * [main.tf](./projects/web-app/main.tf)
-    * [Makefile](./projects/web-appp/Makefile)
+    * [Makefile](./projects/web-app/Makefile)
     * [provider.tf](./projects/web-app/provider.tf)
     * [variables.tf](./projects/web-app/variables.tf)
+* [scripts/](./scripts/)
 
 
 
@@ -66,4 +66,4 @@ NOTE: Terraform states are stored locally.
 
 ## Deploying Terraform code
     
-  - When the code is ready, we can test the code using dry-run
+  - When the code is ready, we can use Makefile to plan and apply Terraform code

@@ -13,18 +13,21 @@ init:
 
 plan: init
 	terraform plan \
-		-var-file=${APP}.tfvars \
-		-out=tfplan
+		-out=tfplan \
+		# -var-file=${APP}.tfvars \
 
 apply:
 	terraform apply \
-		-var-file=${APP}.tfvars \
-		tfplan
+		tfplan \
+		# -var-file=${APP}.tfvars \
 
+destroy: plan 
+	terraform destroy \
+		# -var-file=${APP}.tfvars \
 import:
 	terraform import \
-		-var-file=${APP}.tfvars
+		# -var-file=${APP}.tfvars \
 
 refresh:
 	terraform refresh \
-		-var-file=${APP}.tfvars
+		# -var-file=${APP}.tfvars \
