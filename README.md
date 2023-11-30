@@ -68,7 +68,7 @@ NOTE: Terraform states are stored locally.
     
   - When the code is ready, we can use Makefile to plan and apply Terraform code
 
-  1. In order to terraform plan, run 'make plan'. You should expect an output with similar format from below
+  1. In order to terraform plan, run `make plan`. You should expect an output with similar format from below
 
     ```hcl
       Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
@@ -136,7 +136,7 @@ NOTE: Terraform states are stored locally.
         + key_name_prefix = (known after apply)
         + key_pair_id     = (known after apply)
         + key_type        = (known after apply)
-        + public_key      = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2m7/oy6FapF70fZ/xO66uutZBA0OjBinZLkSjnJQpPBa4bd6vQjQUb80wZlKR9t2RRuSbEeBL/lUv8lixz8g8M4ssq2d94eQ9b96KUkPdbMVq3B0rhsKNMJLoquAkHXGsRA5W4SbxxNZjzzTOfPMYiOT8Y1r0ySFI0lFTxYhvOEkcWoLiL4MqhBvjkptqg2FeXziPObnPl0adyov/X1tIvn41hLajdvBrwZ3RJGGSYi/nVVLpLnBCS7Tx1XGWwSvDUecLtwPc+qIt17NFZ0ZDIxXXJDcRjRvB1zh+gZLY6nJ5RJ9urfVAxv7HbtN84vfWwexj27jwIRD1ng/ngaPz alexazimov@por-mb-aazimov.local"
+        + public_key      = "rsa-sdjajsdjadj"
         + tags_all        = (known after apply)
       }
 
@@ -204,5 +204,10 @@ NOTE: Terraform states are stored locally.
   Plan: 3 to add, 0 to change, 0 to destroy.
 
 
-  - After reviewing carefully, if the plan reflect the changes you ought to make, you can go ahead and run 'make apply'
+
+
+
+- After reviewing carefully, if the plan reflect the changes you ought to make, you can go ahead and run `make apply`
+
+2. In case you want to delete the applied changes, you can run `make destroy`. However, before detroying make sure the resources do not contain any production data or services.
 
