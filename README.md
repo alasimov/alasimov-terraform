@@ -48,22 +48,22 @@ NOTE: Terraform states are stored locally.
    
    Here is the example of how it should look:
 
-   ```hcl
-   ### /modules/web-app/main.tf
-   resource "aws_instance" "web_server" {
-    depends_on = [
-      aws_key_pair.ssh_key, aws_security_group.web_server
-    ]
-    ami             = data.aws_ami.latest.id
-    instance_type   = var.instance_type
-    key_name        = aws_key_pair.ssh_key.key_name
-    security_groups = [aws_security_group.web_server_sg.name]
-    tags            = var.tags
+    ```hcl
+    ### /modules/web-app/main.tf
+    resource "aws_instance" "web_server" {
+      depends_on = [
+        aws_key_pair.ssh_key, aws_security_group.web_server
+      ]
+      ami             = data.aws_ami.latest.id
+      instance_type   = var.instance_type
+      key_name        = aws_key_pair.ssh_key.key_name
+      security_groups = [aws_security_group.web_server_sg.name]
+      tags            = var.tags
 
-    user_data = var.user_data
-    }
+      user_data = var.user_data
+      }
     
-    
+
 ## Deploying Terraform code
     
   - When the code is ready, we can test the code using dry-run
