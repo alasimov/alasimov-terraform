@@ -200,6 +200,7 @@ NOTE: Terraform states are stored locally.
           }
         + vpc_id                 = (known after apply)
       }
+      
     Plan: 3 to add, 0 to change, 0 to destroy.
 
 
