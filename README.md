@@ -15,16 +15,16 @@ The directory structure is integral to the proper functioning of the Terraform c
 
 # terraform-infrastructure
 
-* [modules/](./alasimov-terraform/modules)
-  * [app_name/](./alasimov-terraform/modules/ec2)
-    * [main.tf](./alasimov-terraform/ec2/main.tf)
-    * [variables.tf](./alasimov-terraform/modules/ec2/variables.tf)
-* [projects/](./alasimov-terraform//projects)
-  * [app_name/](./alasimov-terraform/projects/ec2-app)
-    * [main.tf](./alasimov-terraform/projects/ec2-app/main.tf)
-    * [Makefile](./alasimov-terraform/projects/ec2-app/Makefile)
-    * [provider.tf](./alasimov-terraform/projects/project-name/provider.tf)
-    * [variables.tf](./alasimov-terraform/modules/ec2/variables.tf)
+* [modules/](./modules)
+  * [app_name/](./modules/ec2)
+    * [main.tf](./modules/ec2/main.tf)
+    * [variables.tf](./modules/ec2/variables.tf)
+* [projects/](./projects)
+  * [app_name/](./projects/ec2-app)
+    * [main.tf](./projects/ec2-app/main.tf)
+    * [Makefile](./projects/ec2-app/Makefile)
+    * [provider.tf](./projects/project-name/provider.tf)
+    * [variables.tf](./modules/ec2/variables.tf)
 
 
 
