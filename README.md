@@ -15,16 +15,16 @@ The directory structure is integral to the proper functioning of the Terraform c
 
 # terraform-infrastructure
 
-* [modules/](./terraform-infrastructure/modules)
-  * [app_name/](./terraform-infrastructure/modules/ec2)
-    * [main.tf](./terraform-infrastructure/ec2/main.tf)
-    * [variables.tf](./terraform-infrastructure/modules/ec2/variables.tf)
-* [projects/](./terraform-infrastructure//projects)
-  * [app_name/](./terraform-infrastructure//projects/ec2-app)
-    * [main.tf](./terraform-infrastructure//projects/ec2-app/main.tf)
-    * [Makefile](./terraform-infrastructure//projects/ec2-app/Makefile)
-    * [provider.tf](./terraform-infrastacture/projects/project-name/provider.tf)
-    * [variables.tf](./terraform-infrastructure/modules/ec2/variables.tf)
+* [modules/](./alasimov-terraform/modules)
+  * [app_name/](./alasimov-terraform/modules/ec2)
+    * [main.tf](./alasimov-terraform/ec2/main.tf)
+    * [variables.tf](./alasimov-terraform/modules/ec2/variables.tf)
+* [projects/](./alasimov-terraform//projects)
+  * [app_name/](./alasimov-terraform/projects/ec2-app)
+    * [main.tf](./alasimov-terraform/projects/ec2-app/main.tf)
+    * [Makefile](./alasimov-terraform/projects/ec2-app/Makefile)
+    * [provider.tf](./alasimov-terraform/projects/project-name/provider.tf)
+    * [variables.tf](./alasimov-terraform/modules/ec2/variables.tf)
 
 
 
@@ -62,6 +62,7 @@ NOTE: Terraform states are stored locally.
 
     user_data = var.user_data
     }
+    ...
     
 ## Deploying Terraform code
     
