@@ -211,3 +211,4 @@ NOTE: Terraform states are stored locally.
 
 2. In case you want to delete the applied changes, you can run `make destroy`. However, before detroying make sure the resources do not contain any production data or services.
 
+
