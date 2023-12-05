@@ -1,20 +1,3 @@
-resource "aws_instance" "web_server" {
-  depends_on = [
-    aws_key_pair.ssh_key, aws_security_group.web_server_sg
-  ]
-  ami             = data.aws_ami.latest.id
-  instance_type   = var.instance_type
-  key_name        = aws_key_pair.ssh_key.key_name
-  security_groups = [aws_security_group.web_server_sg.name]
-  tags            = var.tags
-
-  user_data = var.user_data
-  
-#   lifecycle {
-#     prevent_destroy = true
-#  }
-}
-
 data "aws_ami" "latest" {
   most_recent = true
   owners      = ["amazon"]
@@ -22,6 +5,11 @@ data "aws_ami" "latest" {
     name   = "name"
     values = ["amzn2-ami-hvm-*"] 
   }
+}
+
+resource "aws_key_pair" "ssh_key" {
+  key_name   = var.key_name
+  public_key = file(var.public_key_path) 
 }
 
 resource "aws_security_group" "web_server_sg" {
@@ -41,7 +29,6 @@ resource "aws_security_group" "web_server_sg" {
         }
   }
 
-
   # Egress rules
   dynamic "egress" {
     for_each = var.egress_rules
@@ -55,7 +42,19 @@ resource "aws_security_group" "web_server_sg" {
       }
 }
 
-resource "aws_key_pair" "ssh_key" {
-  key_name   = var.key_name
-  public_key = file(var.public_key_path) 
+resource "aws_instance" "web_server" {
+  depends_on = [
+    aws_key_pair.ssh_key, aws_security_group.web_server_sg
+  ]
+  ami             = data.aws_ami.latest.id
+  instance_type   = var.instance_type
+  key_name        = aws_key_pair.ssh_key.key_name
+  security_groups = [aws_security_group.web_server_sg.name]
+  tags            = var.tags
+
+  user_data = var.user_data
+  
+  lifecycle {
+    prevent_destroy = true
+ }
 }
