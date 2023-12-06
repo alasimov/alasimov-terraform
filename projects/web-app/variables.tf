@@ -1,7 +1,7 @@
 # Common variables
 variable "aws_region" {
     type = string
-    default = "us-east-1"
+    default = "us-west-2"
 }
 variable "tags" {
   type = object({

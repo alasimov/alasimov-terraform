@@ -31,21 +31,21 @@ module "main" {
         ingress_from_port   = 80
         ingress_to_port     = 80
         ingress_protocol    = "tcp"
-        ingress_cidr_blocks = [] #my ip and ec2 IP, VPN
+        ingress_cidr_blocks = ["52.89.129.181/32", "66.37.42.0/24", "147.30.167.248/32"] 
       },
       allow-https = {
-        ingress_description = "web-app allow https"
-        ingress_from_port   = 8080
-        ingress_to_port     = 8080
+        ingress_description = "web-app allow https from Local, provisioner instance"
+        ingress_from_port   = 443
+        ingress_to_port     = 443
         ingress_protocol    = "tcp"
-        ingress_cidr_blocks = [] #my ip and ec2 IP, 
+        ingress_cidr_blocks = ["52.89.129.181/32", "147.30.167.248/32"] #my ip and ec2 IP, 
       },
       allow-ssh = {
-        ingress_description = "web-app allow"
+        ingress_description = "web-app allow ssh provisioner instance"
         ingress_from_port   = 22
         ingress_to_port     = 22
         ingress_protocol    = "tcp"
-        ingress_cidr_blocks = [] #my ip and ec2 IP,
+        ingress_cidr_blocks = ["52.89.129.181/32"] 
       },
     }
 
@@ -60,6 +60,6 @@ module "main" {
     }
 
     # ssh key values
-      key_name = "git.pub"
-      public_key_path = "~/.ssh/git.pub"
+      key_name = "web-app.pub"
+      public_key_path = "~/.ssh/web-app.pub"
     }
